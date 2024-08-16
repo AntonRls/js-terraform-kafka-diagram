@@ -1,0 +1,14 @@
+{
+  "name": "terraform-parser",
+  "version": "1.0.1",
+  "description": "Библиотека для парсинга terraform формата",
+  "main": "lib/terraform-parser.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "antonrls",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.7.3"
+  }
+}
