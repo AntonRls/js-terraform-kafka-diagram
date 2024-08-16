@@ -3,7 +3,7 @@
 
 ## Установка
 ```node
-npm install terraform-parser@1.0.0
+npm install terraform-parser@1.0.1
 ```
 
 ## Использование
@@ -21,3 +21,7 @@ kafka_topics = parser.getKafkaTopics(lines)
 ```
 
 * Можно спарсить раздел kafka_users и kafka_topics
+## Запуск тестов
+```npm
+npm test
+```
