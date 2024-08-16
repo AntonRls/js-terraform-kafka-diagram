@@ -1,5 +1,5 @@
 # terraform-js-parser
-Небольшая библиотека для парсинга terraform конфига для Кафки
+Небольшая библиотека парсинга terraform конфига для Кафки
 
 ## Установка
 ```node
@@ -20,4 +20,4 @@ kafka_users = parser.getKafkaUsers(lines)
 kafka_topics = parser.getKafkaTopics(lines)
 ```
 
-* Можно спарсить раздел kafka_users и раздел kafka_topics
+* Можно спарсить раздел kafka_users и kafka_topics
