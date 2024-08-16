@@ -8,6 +8,7 @@ npm install terraform-parser@1.0.0
 
 ## Использование
 ```Javascript
+const fs = require('fs');
 const parser = require('terraform-parser');
 
 //Получаем массив строк .tf файла
