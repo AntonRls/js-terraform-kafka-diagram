@@ -1,27 +1,27 @@
-# terraform-js-parser
-Небольшая библиотека парсинга terraform конфига для Кафки
+# js-terraform-kafka-diagram
+A small library for parsing terraform config for Kafka
 
-## Установка
+## Install
 ```node
 npm install terraform-parser@1.0.1
 ```
 
-## Использование
+## Usage
 ```Javascript
 const fs = require('fs');
 const parser = require('terraform-parser');
 
-//Получаем массив строк .tf файла
+//We get an array of strings from a .tf file
 var text = fs.readFileSync("kafka.tf")
 let lines = text.toString().split("\n")
 
-//Передаём в библиотеку для парсинга
+//We pass it to the library for parsing
 kafka_users = parser.getKafkaUsers(lines)
 kafka_topics = parser.getKafkaTopics(lines)
 ```
 
-* Можно спарсить раздел kafka_users и kafka_topics
-## Запуск тестов
+* You can parse the kafka_users and kafka_topics sections
+## Tests
 ```npm
 npm test
 ```
