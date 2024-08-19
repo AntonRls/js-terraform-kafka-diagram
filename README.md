@@ -1,5 +1,5 @@
 # js-terraform-kafka-diagram
-A small library for parsing terraform config for Kafka
+Library for building a datagram using the config for kafka
 
 ## Usage
 ```npm
