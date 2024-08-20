@@ -1,43 +1,49 @@
 locals {
   kafka_users = [
-    "register-service",
-    "analytics",
-    "managers",
-    "developers"
+    "first-service",
+    "second-service",
+    "super-service",
+    "other-system"
   ]
 
   kafka_topics = {
-    "analytics.persons-analytics-events" = {
+    "first-service.main-topic" = {
       user_roles = {
-        analytics      = ["ACCESS_ROLE_CONSUMER"]
-        register-service   = ["ACCESS_ROLE_PRODUCER"]
+        first-service  = ["ACCESS_ROLE_PRODUCER"]
+        second-service = ["ACCESS_ROLE_CONSUMER"]
       }
     },
-    "analytics.developers-analytics-events" = {
+    "second-service.alpha-topic" = {
       user_roles = {
-        developers      = ["ACCESS_ROLE_CONSUMER"]
-        register-service   = ["ACCESS_ROLE_PRODUCER"]
+        second-service = ["ACCESS_ROLE_PRODUCER"]
+        other-system   = ["ACCESS_ROLE_PRODUCER, ACCESS_ROLE_CONSUMER"]
       }
     },
-    "analytics.managers-analytics-events" = {
+    "second-service.beta-topic" = {
       user_roles = {
-        developers      = ["ACCESS_ROLE_CONSUMER"]
-        managers   = ["ACCESS_ROLE_PRODUCER"]
-        analytics   = ["ACCESS_ROLE_PRODUCER"]
+        second-service = ["ACCESS_ROLE_PRODUCER"]
+        other-system   = ["ACCESS_ROLE_CONSUMER"]
       }
     },
-    "register-service.users" = {
+    "second-service.gamma-topic" = {
       user_roles = {
-        register-service   = ["ACCESS_ROLE_PRODUCER"]
-        analytics      = ["ACCESS_ROLE_CONSUMER", "ACCESS_ROLE_PRODUCER"]
+        second-service = ["ACCESS_ROLE_PRODUCER"]
+        other-system   = ["ACCESS_ROLE_CONSUMER"]
       }
     },
-    "developers.users" = {
+    "second-service.delta-topic" = {
       user_roles = {
-        register-service   = ["ACCESS_ROLE_PRODUCER"]
-        analytics      = ["ACCESS_ROLE_CONSUMER", "ACCESS_ROLE_PRODUCER"]
-        managers      = ["ACCESS_ROLE_CONSUMER", "ACCESS_ROLE_PRODUCER"]
+        second-service = ["ACCESS_ROLE_PRODUCER"]
+        other-system   = ["ACCESS_ROLE_CONSUMER"]
       }
     },
+    "super-service.big-topic" = {
+      user_roles = {
+        first-service  = ["ACCESS_ROLE_PRODUCER"]
+        second-service = ["ACCESS_ROLE_PRODUCER"]
+        other-system   = ["ACCESS_ROLE_PRODUCER"]
+        super-service  = ["ACCESS_ROLE_CONSUMER"]
+      }
+    }
   }
 }
